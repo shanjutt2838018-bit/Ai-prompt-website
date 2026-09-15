@@ -1,11 +1,293 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Prompt Hub</title><style>
-*{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font-family:Arial,sans-serif}header{padding:42px 16px;text-align:center;background:linear-gradient(135deg,#111f3d,#182d58,#07111f)}h1{margin:0 0 8px;font-size:38px}header p{color:#b9c8df}main{max-width:1200px;margin:auto;padding:20px 14px}#tabs{display:flex;gap:8px;overflow:auto;padding-bottom:18px}button{border:0;border-radius:999px;padding:11px 15px;background:#18263e;color:#fff;white-space:nowrap;cursor:pointer}button.active,.copy{background:#5d7cff}#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{background:#101c2e;border:1px solid #243650;border-radius:18px;overflow:hidden}img{width:100%;height:220px;object-fit:cover;display:block;background:#17243a}.body{padding:15px}.tag{font-size:12px;color:#91aaff;font-weight:bold}h3{margin:7px 0;font-size:18px}.prompt{color:#c8d5e8;line-height:1.55;font-size:14px;min-height:105px}.copy{width:100%;border-radius:10px;margin-top:10px;font-weight:bold}.ok{background:#20a56a!important}.note{text-align:center;color:#8292ab;font-size:13px;margin:25px}
-</style></head><body><header><h1>✨ AI Prompt Hub</h1><p>100 ready-to-use AI photo & video prompts</p></header><main><div id="tabs"></div><div id="grid"></div><p class="note">Sample images are online previews. You can replace them with your own images later.</p></main>
-<script>
-const data=['👦 Boys','Pakistani White Shalwar Kameez','Create a highly realistic Pakistani White Shalwar Kameez portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','pakistani,man,shalwar',1],['👦 Boys','Black Kurta','Create a highly realistic Black Kurta portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,kurta,portrait',2],['👦 Boys','White Kurta Heritage','Create a highly realistic White Kurta Heritage portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,kurta,heritage',3],['👦 Boys','Denim Street Style','Create a highly realistic Denim Street Style portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,denim,street',4],['👦 Boys','Black Waistcoat','Create a highly realistic Black Waistcoat portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,waistcoat,wedding',5],['👦 Boys','Eid Traditional Look','Create a highly realistic Eid Traditional Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,eid,traditional',6],['👦 Boys','Desert Fashion','Create a highly realistic Desert Fashion portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,desert,fashion',7],['👦 Boys','Rainy City Portrait','Create a highly realistic Rainy City Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,rain,city',8],['👦 Boys','Mountain Portrait','Create a highly realistic Mountain Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,mountains,portrait',9],['👦 Boys','Royal Blue Kurta','Create a highly realistic Royal Blue Kurta portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,kurta,blue',10],['👦 Boys','Cafe Lifestyle','Create a highly realistic Cafe Lifestyle portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,cafe,lifestyle',11],['👦 Boys','Black Sherwani','Create a highly realistic Black Sherwani portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,sherwani,wedding',12],['👦 Boys','Village Traditional Look','Create a highly realistic Village Traditional Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,village,traditional',13],['👦 Boys','Motorbike Street','Create a highly realistic Motorbike Street portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,motorcycle,street',14],['👦 Boys','White Shirt Editorial','Create a highly realistic White Shirt Editorial portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,white,shirt',15],['👦 Boys','Old City Blue Kurta','Create a highly realistic Old City Blue Kurta portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,oldcity,traditional',16],['👦 Boys','Modern Black Suit','Create a highly realistic Modern Black Suit portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,suit,portrait',17],['👦 Boys','Autumn Traditional Look','Create a highly realistic Autumn Traditional Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,autumn,portrait',18],['👦 Boys','Beach Evening','Create a highly realistic Beach Evening portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,beach,sunset',19],['👦 Boys','Minimal Studio Portrait','Create a highly realistic Minimal Studio Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','man,studio,portrait',20],['👧 Girls','Pakistani White Suit','Create a highly realistic Pakistani White Suit portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','pakistani,woman,suit',21],['👧 Girls','Pastel Shalwar Kameez','Create a highly realistic Pastel Shalwar Kameez portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,pastel,shalwar',22],['👧 Girls','Red Wedding Outfit','Create a highly realistic Red Wedding Outfit portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,red,wedding',23],['👧 Girls','Black Traditional Look','Create a highly realistic Black Traditional Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,black,traditional',24],['👧 Girls','Green Eid Outfit','Create a highly realistic Green Eid Outfit portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,eid,green',25],['👧 Girls','Pink Embroidered Suit','Create a highly realistic Pink Embroidered Suit portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,pink,suit',26],['👧 Girls','Blue Anarkali','Create a highly realistic Blue Anarkali portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,anarkali,blue',27],['👧 Girls','Indian Saree','Create a highly realistic Indian Saree portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','indian,woman,saree',28],['👧 Girls','Golden Saree','Create a highly realistic Golden Saree portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,saree,golden',29],['👧 Girls','Casual Denim','Create a highly realistic Casual Denim portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,denim,street',30],['👧 Girls','Rainy Portrait','Create a highly realistic Rainy Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,rain,portrait',31],['👧 Girls','Mountain Travel','Create a highly realistic Mountain Travel portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,mountains,travel',32],['👧 Girls','Desert Fashion','Create a highly realistic Desert Fashion portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,desert,fashion',33],['👧 Girls','White Dupatta','Create a highly realistic White Dupatta portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,white,traditional',34],['👧 Girls','Purple Festive Look','Create a highly realistic Purple Festive Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,purple,festive',35],['👧 Girls','Cafe Lifestyle','Create a highly realistic Cafe Lifestyle portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,cafe,lifestyle',36],['👧 Girls','Minimal Studio','Create a highly realistic Minimal Studio portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,studio,portrait',37],['👧 Girls','Floral Garden','Create a highly realistic Floral Garden portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,flowers,garden',38],['👧 Girls','Black Saree','Create a highly realistic Black Saree portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,black,saree',39],['👧 Girls','Traditional Courtyard','Create a highly realistic Traditional Courtyard portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','woman,courtyard,traditional',40],['💕 Couples','Forehead Touch','Create a highly realistic Forehead Touch portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,southasian,portrait',41],['💕 Couples','Eid Couple','Create a highly realistic Eid Couple portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,eid,traditional',42],['💕 Couples','Wedding Couple','Create a highly realistic Wedding Couple portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,wedding,southasian',43],['💕 Couples','Heritage Walk','Create a highly realistic Heritage Walk portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,heritage,walking',44],['💕 Couples','Rainy Couple','Create a highly realistic Rainy Couple portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,rain,umbrella',45],['💕 Couples','Beach Sunset','Create a highly realistic Beach Sunset portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,beach,sunset',46],['💕 Couples','Mountain Trip','Create a highly realistic Mountain Trip portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,mountains,travel',47],['💕 Couples','Cafe Couple','Create a highly realistic Cafe Couple portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,cafe,lifestyle',48],['💕 Couples','Traditional Courtyard','Create a highly realistic Traditional Courtyard portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,traditional,courtyard',49],['💕 Couples','Black & White','Create a highly realistic Black & White portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,formal,portrait',50],['💕 Couples','Festive Lights','Create a highly realistic Festive Lights portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,festive,lights',51],['💕 Couples','Desert Sunset','Create a highly realistic Desert Sunset portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,desert,sunset',52],['💕 Couples','City Night','Create a highly realistic City Night portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,city,night',53],['💕 Couples','Park Portrait','Create a highly realistic Park Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,park,portrait',54],['💕 Couples','Old City Couple','Create a highly realistic Old City Couple portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,oldcity,traditional',55],['💕 Couples','Luxury Hall','Create a highly realistic Luxury Hall portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,luxury,wedding',56],['💕 Couples','Garden Evening','Create a highly realistic Garden Evening portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,garden,sunset',57],['💕 Couples','Road Trip','Create a highly realistic Road Trip portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,roadtrip,travel',58],['💕 Couples','Minimal Studio','Create a highly realistic Minimal Studio portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,studio,portrait',59],['💕 Couples','Candid Smile','Create a highly realistic Candid Smile portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','couple,candid,smile',60],['🔥 Trending','Cinematic Portrait','Create a highly realistic Cinematic Portrait portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','portrait,cinematic',61],['🔥 Trending','Old Money Style','Create a highly realistic Old Money Style portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','oldmoney,fashion',62],['🔥 Trending','Film Camera Look','Create a highly realistic Film Camera Look portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','film,portrait',63],['🔥 Trending','Golden Hour','Create a highly realistic Golden Hour portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','goldenhour,portrait',64],['🔥 Trending','Street Editorial','Create a highly realistic Street Editorial portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','street,fashion',65],['🔥 Trending','Luxury Black','Create a highly realistic Luxury Black portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','luxury,black,fashion',66],['🔥 Trending','90s Vibe','Create a highly realistic 90s Vibe portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','90s,vintage,portrait',67],['🔥 Trending','Rain Reflection','Create a highly realistic Rain Reflection portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','rain,street,cinematic',68],['🔥 Trending','Neon Night','Create a highly realistic Neon Night portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','neon,night,portrait',69],['🔥 Trending','Minimal Beige','Create a highly realistic Minimal Beige portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','minimal,beige,portrait',70],['🔥 Trending','Travel Magazine','Create a highly realistic Travel Magazine portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','travel,portrait',71],['🔥 Trending','Fashion Walk','Create a highly realistic Fashion Walk portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','fashion,street',72],['🔥 Trending','Soft Window Light','Create a highly realistic Soft Window Light portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','window,portrait',73],['🔥 Trending','Heritage Cinema','Create a highly realistic Heritage Cinema portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','heritage,cinematic',74],['🔥 Trending','Monochrome Editorial','Create a highly realistic Monochrome Editorial portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','blackwhite,portrait',75],['🔥 Trending','Desert Cinema','Create a highly realistic Desert Cinema portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','desert,cinematic',76],['🔥 Trending','Mirror Fashion','Create a highly realistic Mirror Fashion portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','mirror,fashion',77],['🔥 Trending','Luxury Hotel','Create a highly realistic Luxury Hotel portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','hotel,luxury,portrait',78],['🔥 Trending','Cloudy Day','Create a highly realistic Cloudy Day portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','cloudy,portrait',79],['🔥 Trending','Vogue Style','Create a highly realistic Vogue Style portrait. South Asian/Pakistani-inspired styling where appropriate, elegant outfit, natural skin texture, cinematic lighting, 85mm lens, shallow depth of field, premium editorial photography, sharp details.','fashion,editorial',80],['🎬 Video Prompts','Pakistan Cinematic Reel','10-second cinematic video: Pakistan Cinematic Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','pakistan,cinematic,video',81],['🎬 Video Prompts','India Fashion Reel','10-second cinematic video: India Fashion Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','india,fashion,video',82],['🎬 Video Prompts','Eid Couple Reel','10-second cinematic video: Eid Couple Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','couple,eid,video',83],['🎬 Video Prompts','Rainy Street Reel','10-second cinematic video: Rainy Street Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','rain,street,video',84],['🎬 Video Prompts','Desert Walk','10-second cinematic video: Desert Walk. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','desert,video,cinematic',85],['🎬 Video Prompts','Wedding Entrance','10-second cinematic video: Wedding Entrance. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','wedding,video,southasian',86],['🎬 Video Prompts','Mountain Travel Reel','10-second cinematic video: Mountain Travel Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','mountains,travel,video',87],['🎬 Video Prompts','Old City Walk','10-second cinematic video: Old City Walk. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','oldcity,walking,video',88],['🎬 Video Prompts','Cafe Lifestyle Reel','10-second cinematic video: Cafe Lifestyle Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','cafe,lifestyle,video',89],['🎬 Video Prompts','Night City Reel','10-second cinematic video: Night City Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','city,night,video',90],['🎬 Video Prompts','Traditional Fashion Reel','10-second cinematic video: Traditional Fashion Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','traditional,fashion,video',91],['🎬 Video Prompts','Beach Sunset Reel','10-second cinematic video: Beach Sunset Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','beach,sunset,video',92],['🎬 Video Prompts','90s Video Vibe','10-second cinematic video: 90s Video Vibe. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','90s,vintage,video',93],['🎬 Video Prompts','Luxury Portrait Video','10-second cinematic video: Luxury Portrait Video. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','luxury,portrait,video',94],['🎬 Video Prompts','Green Garden Reel','10-second cinematic video: Green Garden Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','garden,flowers,video',95],['🎬 Video Prompts','Black Outfit Reel','10-second cinematic video: Black Outfit Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','black,fashion,video',96],['🎬 Video Prompts','Golden Hour Walk','10-second cinematic video: Golden Hour Walk. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','goldenhour,walking,video',97],['🎬 Video Prompts','Heritage Couple Video','10-second cinematic video: Heritage Couple Video. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','couple,heritage,video',98],['🎬 Video Prompts','Road Trip Reel','10-second cinematic video: Road Trip Reel. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','roadtrip,travel,video',99],['🎬 Video Prompts','Viral Cinematic Intro','10-second cinematic video: Viral Cinematic Intro. Natural movement, smooth camera tracking, realistic lighting, shallow depth of field, premium 4K look, authentic expressions, no distortion.','viral,intro,video',100];
-const cats=[...new Set(data.map(x=>x[0]))],tabs=document.getElementById('tabs'),grid=document.getElementById('grid');
-function show(cat,b){document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');grid.innerHTML=data.filter(x=>x[0]==cat).map(x=>`<article class="card"><img loading="lazy" src="https://loremflickr.com/800/600/${encodeURIComponent(x[3])}?lock=${x[4]}" alt="${x[1]}"><div class="body"><div class="tag">${x[0]}</div><h3>${x[1]}</h3><div class="prompt">${x[2]}</div><button class="copy" onclick="cp(this,${JSON.stringify(x[2])})">📋 Copy Prompt</button></div></article>`).join('')}
-function cp(b,t){navigator.clipboard.writeText(t);b.textContent='✓ Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='📋 Copy Prompt';b.classList.remove('ok')},1200)}
-cats.forEach((c,i)=>{let b=document.createElement('button');b.textContent=c;b.onclick=()=>show(c,b);tabs.appendChild(b);if(!i)show(c,b)})
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Prompt Hub</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#07111f;
+  color:white;
+}
+
+header{
+  text-align:center;
+  padding:45px 15px;
+  background:linear-gradient(135deg,#101d3b,#172d58,#07111f);
+}
+
+header h1{
+  margin:0;
+  font-size:38px;
+}
+
+header p{
+  color:#b9c7df;
+  margin-top:10px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px 15px;
+}
+
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:20px;
+}
+
+.categories button{
+  border:0;
+  border-radius:25px;
+  padding:12px 18px;
+  background:#18263e;
+  color:white;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.categories button.active{
+  background:#5d7cff;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#101c2e;
+  border:1px solid #263750;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card h3{
+  margin:7px 0;
+}
+
+.card p{
+  color:#c8d5e8;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.copy{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:10px;
+  background:#5d7cff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>✨ AI Prompt Hub<!-- BOYS PROMPTS -->
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy1/800/600">
+<div class="card-content">
+<h3>Pakistani White Shalwar Kameez</h3>
+<p>Create a realistic portrait of a young man wearing an elegant white Pakistani shalwar kameez, traditional background, golden hour lighting, 85mm lens, cinematic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy2/800/600">
+<div class="card-content">
+<h3>Black Kurta</h3>
+<p>Young man wearing a stylish black kurta, dramatic cinematic lighting, dark background, sharp details, realistic skin texture, professional fashion photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy3/800/600">
+<div class="card-content">
+<h3>White Kurta Heritage</h3>
+<p>Young Pakistani man in a clean white kurta standing beside beautiful historic architecture, warm sunset light, shallow depth of field, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy4/800/600">
+<div class="card-content">
+<h3>Denim Street Style</h3>
+<p>Young man wearing a denim jacket and black jeans walking through a modern city street, cinematic composition, 35mm lens, natural realistic lighting.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy5/800/600">
+<div class="card-content">
+<h3>Black Waistcoat</h3>
+<p>Elegant young man wearing a black waistcoat over traditional Pakistani clothing, luxury wedding venue, soft golden lighting, premium portrait photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy6/800/600">
+<div class="card-content">
+<h3>Eid Traditional Look</h3>
+<p>Young man wearing an elegant traditional Eid outfit, beautiful festive lights in background, warm bokeh, cinematic portrait, realistic details.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy7/800/600">
+<div class="card-content">
+<h3>Desert Fashion</h3>
+<p>Young man in traditional South Asian clothing standing in a desert at sunset, flowing fabric, cinematic wide shot, realistic professional photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy8/800/600">
+<div class="card-content">
+<h3>Rainy City</h3>
+<p>Cinematic portrait of a young man walking through a rainy city street, wet road reflections, dramatic atmosphere, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy9/800/600">
+<div class="card-content">
+<h3>Mountain Portrait</h3>
+<p>Young man standing near beautiful green mountains, traditional outfit, cloudy sky, natural light, realistic travel photography, sharp details.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy10/800/600">
+<div class="card-content">
+<h3>Royal Blue Kurta</h3>
+<p>Young man wearing a royal blue kurta, elegant traditional setting, cinematic lighting, shallow depth of field, premium fashion portrait.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy11/800/600">
+<div class="card-content">
+<h3>Cafe Lifestyle</h3>
+<p>Young man sitting in a modern cafe, smart casual outfit, soft window light, natural expression, realistic lifestyle photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy12/800/600">
+<div class="card-content">
+<h3>Black Sherwani</h3>
+<p>Young man wearing an elegant black sherwani at a wedding venue, warm lights, cinematic portrait, premium fashion photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy13/800/600">
+<div class="card-content">
+<h3>Traditional Village</h3>
+<p>Young man in traditional Pakistani clothing in a peaceful village setting, golden hour, natural environment, documentary-style photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy14/800/600">
+<div class="card-content">
+<h3>Motorbike Street</h3>
+<p>Young man standing beside a classic motorcycle on an urban street, stylish outfit, sunset lighting, cinematic street photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy15/800/600">
+<div class="card-content">
+<h3>White Shirt Editorial</h3>
+<p>Young man wearing a crisp white shirt, clean studio background, soft shadows, professional editorial portrait, realistic skin texture.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy16/800/600">
+<div class="card-content">
+<h3>Old City Look</h3>
+<p>Young man wearing a traditional blue kurta in an old city street, warm evening light, cinematic composition, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy17/800/600">
+<div class="card-content">
+<h3>Modern Black Suit</h3>
+<p>Young man wearing a modern black suit inside a luxury hotel, soft background blur, professional editorial photography, cinematic lighting.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy18/800/600">
+<div class="card-content">
+<h3>Autumn Portrait</h3>
+<p>Young man in an elegant traditional outfit surrounded by autumn trees, soft morning light, warm cinematic atmosphere, realistic portrait.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy19/800/600">
+<div class="card-content">
+<h3>Beach Evening</h3>
+<p>Young man walking beside the sea at sunset, smart casual outfit, warm sky, cinematic travel photography, natural realistic colors.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy20/800/600">
+<div class="card-content">
+<h3>Minimal Studio</h3>
+<p>Minimal studio portrait of a young man in a neutral traditional outfit, softbox lighting, clean background, realistic professional photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
