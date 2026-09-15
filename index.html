@@ -2,532 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI Prompt Hub</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6fb;
-  color: #222;
-}
-
-header {
-  background: #17345f;
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 38px;
-}
-
-header p {
-  font-size: 18px;
-  margin: 10px 0 0;
-}
-
-.hero {
-  margin: 30px 20px;
-  padding: 30px 20px;
-  border-radius: 25px;
-  text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #ff8a00, #ff3d81, #7b35e8);
-}
-
-.hero h2 {
-  font-size: 30px;
-  margin: 0 0 10px;
-}
-
-.categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  padding: 20px;
-}
-
-.category {
-  background: white;
-  padding: 25px 10px;
-  border-radius: 22px;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  cursor: pointer;
-}
-
-.category span {
-  display: block;
-  font-size: 45px;
-  margin-bottom: 10px;
-}
-
-.section-title {
-  padding: 20px;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.prompts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-}
-
-.card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-content {
-  padding: 16px;
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-.prompt {
-  background: #f1f3f8;
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.copy-btn {
-  width: 100%;
-  margin-top: 12px;
-  padding: 12px;
-  border: 0;
-  border-radius: 10px;
-  background: #17345f;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  margin-top: 30px;
-  background: #17345f;
-  color: white;
-}
-
-@media (max-width: 600px) {
-  .prompts {
-    grid-template-columns: 1fr;
-  }
-
-  header h1 {
-    font-size: 32px;
-  }
-}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#071326;color:#fff}
+header{padding:22px 16px;text-align:center;background:#0b1b35;position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:30px}header p{margin:7px 0 0;color:#b9c8e5}
+.hero{margin:14px;padding:30px 20px;border-radius:22px;text-align:center;background:linear-gradient(135deg,#ff8a00,#f2298f,#633cff)}
+.hero h2{font-size:28px;margin:0 0 10px}.hero p{margin:0;line-height:1.5}
+.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}
+.nav button{border:0;border-radius:14px;padding:15px 6px;background:#102542;color:#fff;font-weight:bold}
+section{padding:8px 14px 18px}.title{font-size:25px;font-weight:800;margin:18px 4px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:#0e203b;border:1px solid #1c3b62;border-radius:16px;overflow:hidden}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
+.content{padding:12px}.content h3{font-size:17px;margin:0 0 8px}.prompt{font-size:13px;line-height:1.45;color:#d5def0}
+.copy{margin-top:10px;width:100%;padding:10px;border:0;border-radius:10px;background:#4d5cff;color:#fff;font-weight:bold}
+footer{text-align:center;padding:28px;color:#aebbd1;background:#06101f}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}.card img{height:145px}}
 </style>
 </head>
-
 <body>
+<header><h1>✨ AI Prompt Hub</h1><p>Create • Imagine • Generate</p></header>
+<div class="hero"><h2>🔥 Trending AI Photo & Video Prompts</h2><p>Ready-made prompts for amazing AI photos and videos. Copy, paste and create.</p></div>
 
-<header>
-  <h1>AI Prompt Hub</h1>
-  <p>Trending AI Photo & Video Prompts</p>
-</header>
-
-<div class="hero">
-  <h2>🔥 Viral AI Prompts</h2>
-  <p>Create amazing AI photos and videos with ready-made prompts.</p>
+<div class="nav">
+<button onclick="go('boy')">👦 Boy</button><button onclick="go('girl')">👧 Girl</button>
+<button onclick="go('couple')">❤️ Couple</button><button onclick="go('trending')">🔥 Trending</button>
+<button onclick="go('video')">🎬 Video</button><button onclick="go('festival')">🎁 Festival</button>
 </div>
 
-<div class="categories">
-
-  <div class="category">
-    <span>👨</span>
-    Boy Prompts
-  </div>
-
-  <div class="category">
-    <span>👩</span>
-    Girl Prompts
-  </div>
-
-  <div class="category">
-    <span>💞</span>
-    Couple Prompts
-  </div>
-
-  <div class="category">
-    <span>🔥</span>
-    Trending Prompts
-  </div>
-
-  <div class="category">
-    <span>🎬</span>
-    Video Prompts
-  </div>
-
-  <div class="category">
-    <span>🎁</span>
-    Festival Prompts
-  </div>
-
-</div>
-
-<div class="section-title">
-  ✨ Couple Prompts
-</div>
-
-<div class="prompts">
-
-  <div class="card">
-
-    <img src="Couple_touching_forehead.jpg" alt="Couple AI Prompt">
-
-    <div class="card-content">
-
-      <h3>❤️ Romantic Couple</h3>
-
-      <div class="prompt" id="prompt1">
-        Create a cinematic romantic couple portrait,
-        soft warm lighting, realistic skin texture,
-        natural expressions, shallow depth of field,
-        professional photography, ultra realistic,
-        4K quality.
-      </div>
-
-      <button class="copy-btn"
-      onclick="copyPrompt('prompt1')">
-        📋 Copy Prompt
-      </button>
-
-    </div>
-  </div>
-
-
-  <div class="card">
-
-    <img src="FB_IMG_178923991558.jpg" alt="AI Photo">
-
-    <div class="card-content">
-
-      <h3>💖 Romantic Portrait</h3>
-
-      <div class="prompt" id="prompt2">
-        Create a beautiful realistic couple portrait,
-        cinematic atmosphere, soft background bokeh,
-        natural face details, professional camera,
-        realistic lighting, high detail, 4K.
-      </div>
-
-      <button class="copy-btn"
-      onclick="copyPrompt('prompt2')">
-        📋 Copy Prompt
-      </button>
-
-    </div>
-  </div>
-
-
-  <div class="card">
-
-    <img src="file_0000000066288211aedc7b996bab892e.png"
-    alt="AI Couple Photo">
-
-    <div class="card-content">
-
-      <h3>🔥 Cinematic Couple</h3>
-
-      <div class="prompt" id="prompt3">
-        Create a cinematic realistic couple scene,
-        elegant composition, dramatic soft lighting,
-        detailed faces, realistic hair and skin,
-        professional photography, shallow depth of field,
-        ultra realistic 4K.
-      </div>
-
-      <button class="copy-btn"
-      onclick="copyPrompt('prompt3')">
-        📋 Copy Prompt
-      </button>
-
-    </div>
-  </div>
-
-
-  <div class="card">
-
-    <img src="file_0000000066288211aedc7b996bab892e.png"
-    alt="Trending AI Photo">
-
-    <div class="card-content">
-
-      <h3>✨ Trending AI Style</h3>
-
-      <div class="prompt" id="prompt4">
-        Create a trending cinematic portrait,
-        realistic photography style, premium lighting,
-        natural skin texture, sharp facial details,
-        beautiful background blur, DSLR photography,
-        ultra detailed 4K.
-      </div>
-
-      <button class="copy-btn"
-      onclick="copyPrompt('prompt4')">
-        📋 Copy Prompt
-      </button>
-
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 AI Prompt Hub
-</footer>
+<div id="app"></div>
+<footer>Made with ❤️ for AI creators • AI Prompt Hub</footer>
 
 <script>
+const data={
+boy:[
+["Stylish Boy","https://images.unsplash.com/photo-1500648767791-00dcc994a43e","A stylish young man portrait, black jacket, urban background, cinematic lighting, realistic skin, professional DSLR photography, ultra detailed 4K."],
+["Business Look","https://images.unsplash.com/photo-1506794778202-cad84cf45f1d","Professional young man in an elegant black suit, luxury office, soft cinematic light, natural face, shallow depth of field, realistic 4K."],
+["Outdoor Boy","https://images.unsplash.com/photo-1519085360753-af0119f7cbe7","Young man outdoors in the mountains, casual outfit, blue sky, natural sunlight, cinematic composition, realistic photography, 4K."],
+["Street Style","https://images.unsplash.com/photo-1517841905240-472988babdf9","Modern street-style male portrait, fashionable outfit, city lights, moody cinematic lighting, realistic details, sharp focus."],
+["Travel Portrait","https://images.unsplash.com/photo-1524504388940-b1c1722653e1","Young traveler with backpack, beautiful landscape behind him, golden-hour light, cinematic travel photography, realistic 4K."]
+],
+girl:[
+["Cute Girl","https://images.unsplash.com/photo-1494790108377-be9c29b29330","Beautiful natural girl portrait, soft smile, casual outfit, warm light, clean background, realistic skin texture, professional photography."],
+["Traditional Look","https://images.unsplash.com/photo-1531123897727-8f129e1688ce","Elegant South Asian girl in traditional dress, jewelry, warm indoor lighting, natural expression, cinematic realistic photography."],
+["Winter Girl","https://images.unsplash.com/photo-1515886657613-9f3515b0c78f","Young woman wearing a stylish winter coat and scarf, snowy background, soft daylight, cinematic portrait, realistic 4K."],
+["Aesthetic Girl","https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43","Aesthetic female portrait, soft window light, natural makeup, elegant outfit, beautiful bokeh, realistic professional photography."],
+["Garden Portrait","https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e","Beautiful girl in a flower garden, soft sunlight, natural smile, dreamy background blur, realistic skin and hair, high detail."]
+],
+couple:[
+["Forehead Touch","https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2","Romantic couple portrait with foreheads gently touching, warm sunset light, emotional but natural expressions, cinematic photography."],
+["Beach Walk","https://images.unsplash.com/photo-1529333166437-7750a6dd5a70","Couple walking together on a beach at sunset, soft golden light, natural candid moment, cinematic wide shot, realistic 4K."],
+["Candid Couple","https://images.unsplash.com/photo-1529156069898-49953e39b3ac","Happy couple sharing a candid moment outdoors, warm sunlight, natural expressions, shallow depth of field, realistic photography."],
+["Rainy Love","https://images.unsplash.com/photo-1519741497674-611481863552","Couple under an umbrella in gentle rain, cinematic atmosphere, soft reflections, romantic mood, realistic film photography."],
+["Mountain Couple","https://images.unsplash.com/photo-1529156069898-49953e39b3ac","Couple standing together in a mountain landscape, sunset behind them, cinematic composition, natural clothing, ultra realistic 4K."]
+],
+trending:[
+["Cinematic Portrait","https://images.unsplash.com/photo-1517841905240-472988babdf9","Trending cinematic portrait, dramatic soft lighting, premium color grading, sharp facial details, shallow depth of field, 4K."],
+["Golden Hour","https://images.unsplash.com/photo-1500534623283-312aade485b7","Golden-hour portrait with warm sunlight, dreamy background, natural skin texture, cinematic lens, realistic photography."],
+["Luxury Style","https://images.unsplash.com/photo-1519085360753-af0119f7cbe7","Luxury fashion portrait, elegant outfit, modern architecture, premium lighting, editorial photography, realistic 4K."],
+["Moody Portrait","https://images.unsplash.com/photo-1512316609839-ce289d3eba0a","Moody cinematic portrait, dark background, controlled studio lighting, realistic skin texture, professional camera look."],
+["Travel Vibe","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee","Cinematic travel photo, person overlooking a stunning landscape, atmospheric light, realistic details, movie-like composition."]
+],
+video:[
+["Cinematic Walk","https://images.unsplash.com/photo-1492562080023-ab3db95bfbce","10-second cinematic walking video, slow camera push-in, natural body movement, realistic environment, soft golden-hour lighting, smooth motion."],
+["Car Scene","https://images.unsplash.com/photo-1503376780353-7e6692767b70","10-second cinematic car scene, smooth tracking shot, realistic reflections, dramatic evening lighting, natural motion, high detail."],
+["Couple Video","https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2","10-second romantic couple video, gentle movement, subtle camera orbit, sunset light, natural expressions, cinematic depth of field."],
+["Nature Vibes","https://images.unsplash.com/photo-1500534623283-312aade485b7","10-second nature cinematic video, slow camera movement through a beautiful landscape, wind in the environment, realistic lighting."],
+["Fashion Reel","https://images.unsplash.com/photo-1529139574466-a303027c1d8b","10-second fashion reel, confident walking motion, smooth camera tracking, modern city background, cinematic lighting, realistic movement."]
+],
+festival:[
+["Eid Celebration","https://images.unsplash.com/photo-1530103862676-de8c9debad1d","Elegant Eid celebration portrait, festive traditional outfit, warm decorative lights, beautiful background, realistic cinematic photography."],
+["Wedding Vibes","https://images.unsplash.com/photo-1519225421980-715cb0215aed","Elegant wedding scene, beautiful decorations, soft warm lights, cinematic photography, realistic details, premium composition."],
+["New Year","https://images.unsplash.com/photo-1467810563316-b5476525c0f9","New Year celebration, glowing lights, festive atmosphere, cinematic night photography, realistic details, vibrant scene."],
+["Festival Lights","https://images.unsplash.com/photo-1514525253161-7a46d19cd819","Colorful festival lights, joyful atmosphere, cinematic night scene, realistic people and environment, high detail."],
+["Ramadan","https://images.unsplash.com/photo-1519817650390-64a93db51149","Peaceful Ramadan-inspired evening scene, lanterns and warm lights, elegant atmosphere, cinematic realistic photography."]
+]};
 
-function copyPrompt(id) {
-
-  const text = document.getElementById(id).innerText;
-
-  navigator.clipboard.writeText(text);
-
-  alert("Prompt copied successfully! ✅");
-
+function esc(s){return s.replace(/'/g,"\\'")}
+function render(key){
+ const items=data[key]; const title=key[0].toUpperCase()+key.slice(1);
+ document.getElementById("app").innerHTML=`<section id="${key}"><div class="title">${title} Prompts</div><div class="grid">`+
+ items.map((x,i)=>`<div class="card"><img src="${x[1]}?auto=format&fit=crop&w=900&q=85" alt="${x[0]}"><div class="content"><h3>${x[0]}</h3><div class="prompt" id="${key}${i}">${x[2]}</div><button class="copy" onclick="copyText('${key}${i}')">📋 Copy Prompt</button></div></div>`).join("")+
+ `</div></section>`;
 }
-
+function copyText(id){navigator.clipboard.writeText(document.getElementById(id).innerText);alert("Prompt copied! ✅")}
+function go(key){render(key);document.getElementById("app").scrollIntoView({behavior:"smooth"})}
+render("boy");
 </script>
-
-</body>
-</html>
-    .hero {
-      margin: 25px 15px;
-      padding: 30px 20px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #ff9a00, #ff3d81, #713cff);
-      color: white;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 16px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 10px 15px 40px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 25px 15px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-    }
-
-    .emoji {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-    }
-
-    .prompt-box {
-      background: white;
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    }
-
-    .prompt-box h2 {
-      margin-bottom: 15px;
-    }
-
-    .prompt {
-      background: #f0f3f8;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    .copy-btn {
-      background: #142d50;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    @media (max-width: 500px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero h2 {
-        font-size: 25px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <h1>AI Prompt Hub</h1>
-    <p>Trending AI Photo & Video Prompts</p>
-  </header>
-
-  <div class="container">
-
-    <section class="hero">
-      <h2>🔥 Viral AI Prompts</h2>
-      <p>Create amazing AI photos and videos with ready-made prompts.</p>
-    </section>
-
-    <div class="grid">
-
-      <div class="card" onclick="showPrompt('Boy Prompts')">
-        <div class="emoji">👦</div>
-        <h3>Boy Prompt</h3>
-      </div>
-
-      <div class="card" onclick="showPrompt('Girl Prompts')">
-        <div class="emoji">👧</div>
-        <h3>Girl Prompt</h3>
-      </div>
-
-      <div class="card" onclick="showPrompt('Couple Prompts')">
-        <div class="emoji">💕</div>
-        <h3>Couple Prompt</h3>
-      </div>
-
-      <div class="card" onclick="showPrompt('Trending Prompts')">
-        <div class="emoji">🔥</div>
-        <h3>Trending Prompt</h3>
-      </div>
-
-      <div class="card" onclick="showPrompt('Video Prompts')">
-        <div class="emoji">🎬</div>
-        <h3>Video Prompt</h3>
-      </div>
-
-      <div class="card" onclick="showPrompt('Festival Prompts')">
-        <div class="emoji">🎁</div>
-        <h3>Festival Prompt</h3>
-      </div>
-
-    </div>
-
-    <div class="prompt-box" id="promptBox">
-      <h2>✨ Select a category</h2>
-      <p>اوپر کسی بھی category پر click کریں۔</p>
-    </div>
-
-  </div>
-
-  <footer>
-    © 2026 AI Prompt Hub
-  </footer>
-
-  <script>
-    function showPrompt(category) {
-
-      let prompt = "";
-
-      if (category === "Boy Prompts") {
-        prompt = "Create a cinematic portrait of a young man, natural lighting, sharp details, realistic skin texture, professional photography, 85mm lens, shallow depth of field.";
-      }
-
-      if (category === "Girl Prompts") {
-        prompt = "Create a beautiful cinematic portrait of a young woman, natural lighting, realistic details, soft background, professional photography, 85mm lens.";
-      }
-
-      if (category === "Couple Prompts") {
-        prompt = "Create a romantic cinematic couple portrait in a beautiful outdoor location, natural expressions, realistic photography, soft sunlight, detailed faces.";
-      }
-
-      if (category === "Trending Prompts") {
-        prompt = "Create a viral cinematic AI portrait with dramatic lighting, realistic details, premium photography look, sharp focus and beautiful background.";
-      }
-
-      if (category === "Video Prompts") {
-        prompt = "Create a cinematic 10-second video with smooth camera movement, realistic motion, natural lighting and detailed environment.";
-      }
-
-      if (category === "Festival Prompts") {
-        prompt = "Create a cinematic festival portrait with beautiful decorations, warm lighting, realistic details and professional photography.";
-      }
-
-      document.getElementById("promptBox").innerHTML =
-        "<h2>✨ " + category + "</h2>" +
-        "<div class='prompt' id='promptText'>" + prompt + "</div>" +
-        "<button class='copy-btn' onclick='copyPrompt()'>📋 Copy Prompt</button>";
-    }
-
-    function copyPrompt() {
-      let text = document.getElementById("promptText").innerText;
-
-      navigator.clipboard.writeText(text);
-
-      alert("Prompt copied!");
-    }
-  </script>
-
 </body>
 </html>
