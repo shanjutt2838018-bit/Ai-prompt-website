@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #142d50;
+      color: white;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .hero {
+      margin: 25px 15px;
+      padding: 30px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #ff9a00, #ff3d81, #713cff);
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 10px 15px 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .emoji {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+    }
+
+    .prompt-box {
+      background: white;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .prompt-box h2 {
+      margin-bottom: 15px;
+    }
+
+    .prompt {
+      background: #f0f3f8;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      background: #142d50;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>AI Prompt Hub</h1>
+    <p>Trending AI Photo & Video Prompts</p>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+      <h2>🔥 Viral AI Prompts</h2>
+      <p>Create amazing AI photos and videos with ready-made prompts.</p>
+    </section>
+
+    <div class="grid">
+
+      <div class="card" onclick="showPrompt('Boy Prompts')">
+        <div class="emoji">👦</div>
+        <h3>Boy Prompt</h3>
+      </div>
+
+      <div class="card" onclick="showPrompt('Girl Prompts')">
+        <div class="emoji">👧</div>
+        <h3>Girl Prompt</h3>
+      </div>
+
+      <div class="card" onclick="showPrompt('Couple Prompts')">
+        <div class="emoji">💕</div>
+        <h3>Couple Prompt</h3>
+      </div>
+
+      <div class="card" onclick="showPrompt('Trending Prompts')">
+        <div class="emoji">🔥</div>
+        <h3>Trending Prompt</h3>
+      </div>
+
+      <div class="card" onclick="showPrompt('Video Prompts')">
+        <div class="emoji">🎬</div>
+        <h3>Video Prompt</h3>
+      </div>
+
+      <div class="card" onclick="showPrompt('Festival Prompts')">
+        <div class="emoji">🎁</div>
+        <h3>Festival Prompt</h3>
+      </div>
+
+    </div>
+
+    <div class="prompt-box" id="promptBox">
+      <h2>✨ Select a category</h2>
+      <p>اوپر کسی بھی category پر click کریں۔</p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 AI Prompt Hub
+  </footer>
+
+  <script>
+    function showPrompt(category) {
+
+      let prompt = "";
+
+      if (category === "Boy Prompts") {
+        prompt = "Create a cinematic portrait of a young man, natural lighting, sharp details, realistic skin texture, professional photography, 85mm lens, shallow depth of field.";
+      }
+
+      if (category === "Girl Prompts") {
+        prompt = "Create a beautiful cinematic portrait of a young woman, natural lighting, realistic details, soft background, professional photography, 85mm lens.";
+      }
+
+      if (category === "Couple Prompts") {
+        prompt = "Create a romantic cinematic couple portrait in a beautiful outdoor location, natural expressions, realistic photography, soft sunlight, detailed faces.";
+      }
+
+      if (category === "Trending Prompts") {
+        prompt = "Create a viral cinematic AI portrait with dramatic lighting, realistic details, premium photography look, sharp focus and beautiful background.";
+      }
+
+      if (category === "Video Prompts") {
+        prompt = "Create a cinematic 10-second video with smooth camera movement, realistic motion, natural lighting and detailed environment.";
+      }
+
+      if (category === "Festival Prompts") {
+        prompt = "Create a cinematic festival portrait with beautiful decorations, warm lighting, realistic details and professional photography.";
+      }
+
+      document.getElementById("promptBox").innerHTML =
+        "<h2>✨ " + category + "</h2>" +
+        "<div class='prompt' id='promptText'>" + prompt + "</div>" +
+        "<button class='copy-btn' onclick='copyPrompt()'>📋 Copy Prompt</button>";
+    }
+
+    function copyPrompt() {
+      let text = document.getElementById("promptText").innerText;
+
+      navigator.clipboard.writeText(text);
+
+      alert("Prompt copied!");
+    }
+  </script>
+
+</body>
+</html>
