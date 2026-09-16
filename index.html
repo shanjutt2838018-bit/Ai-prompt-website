@@ -4,369 +4,365 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Prompt Hub - Boys Prompts</title>
+<title>AI Prompt Hub</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
 
 body{
   margin:0;
-  background:#090b12;
-  color:#f4f5fa;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial,sans-serif;
+  background:#07111f;
+  color:white;
 }
 
 header{
-  padding:35px 20px 25px;
   text-align:center;
-  background:linear-gradient(180deg,#151827,#090b12);
+  padding:45px 15px;
+  background:linear-gradient(135deg,#101d3b,#172d58,#07111f);
 }
 
 header h1{
   margin:0;
-  font-size:32px;
-  font-weight:800;
+  font-size:38px;
 }
 
 header p{
-  color:#aeb4c5;
-  margin:10px 0 0;
-  font-size:15px;
+  color:#b9c7df;
+  margin-top:10px;
 }
 
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
-  padding:20px;
+  padding:20px 15px;
 }
 
-select{
-  width:100%;
-  max-width:370px;
-  padding:16px;
-  border-radius:14px;
-  background:#171b28;
-  color:white;
-  border:1px solid #303648;
-  font-size:16px;
-  margin-bottom:25px;
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:20px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:24px;
-}
-
-.card{
-  background:#151925;
-  border:1px solid #292e3e;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
-}
-
-.reference-photo{
-  position:relative;
-  width:100%;
-  height:420px;
-  background:#222735;
-  overflow:hidden;
-}
-
-.reference-photo img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center;
-}
-
-.photo-label{
-  position:absolute;
-  top:16px;
-  left:16px;
-  background:rgba(0,0,0,.78);
-  color:white;
-  padding:10px 14px;
-  border-radius:9px;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.4px;
-}
-
-.content{
-  padding:22px;
-}
-
-.number{
-  color:#b58cff;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:1.2px;
-  margin-bottom:8px;
-}
-
-h2{
-  margin:0 0 12px;
-  font-size:25px;
-}
-
-.tag{
-  display:inline-block;
-  padding:8px 13px;
-  border-radius:20px;
-  background:#30204e;
-  color:#d6baff;
-  font-size:13px;
-  margin-bottom:17px;
-}
-
-.prompt{
-  background:#202533;
-  border:1px solid #303748;
-  border-radius:14px;
-  padding:16px;
-  color:#dfe3ed;
-  line-height:1.7;
-  font-size:14px;
-  max-height:320px;
-  overflow:auto;
-}
-
-.copy-btn{
-  width:100%;
-  margin-top:15px;
-  padding:14px;
+.categories button{
   border:0;
-  border-radius:12px;
-  background:#7c4dff;
+  border-radius:25px;
+  padding:12px 18px;
+  background:#18263e;
   color:white;
-  font-size:15px;
-  font-weight:700;
+  white-space:nowrap;
   cursor:pointer;
 }
 
-.copy-btn:active{
-  transform:scale(.98);
+.categories button.active{
+  background:#5d7cff;
 }
 
-footer{
-  text-align:center;
-  color:#777f92;
-  padding:40px 20px;
-  font-size:13px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
 }
 
-@media(max-width:600px){
-
-  header h1{
-    font-size:27px;
-  }
-
-  .container{
-    padding:14px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .reference-photo{
-    height:390px;
-  }
-
-  h2{
-    font-size:23px;
-  }
-
+.card{
+  background:#101c2e;
+  border:1px solid #263750;
+  border-radius:18px;
+  overflow:hidden;
 }
 
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card h3{
+  margin:7px 0;
+}
+
+.card p{
+  color:#c8d5e8;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.copy{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:10px;
+  background:#5d7cff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
 </style>
 </head>
-
 
 <body>
 
 <header>
-
 <h1>✨ AI Prompt Hub</h1>
-
-<p>Premium AI Photo & Video Prompts</p>
-
+<p>100 Ready-to-Use AI Photo & Video Prompts</p>
 </header>
-
 
 <div class="container">
 
-<select id="category">
+<div class="categories">
 
-<option>👦 Boys Prompts</option>
-<option>👧 Girls Prompts</option>
-<option>💕 Couple Prompts</option>
-<option>🔥 Trending Prompts</option>
-<option>🎬 Video Prompts</option>
+<button class="active" onclick="showCategory('boys')">
+👦 Boys
+</button>
 
-</select>
+<button onclick="showCategory('girls')">
+👧 Girls
+</button>
 
+<button onclick="showCategory('couples')">
+💕 Couples
+</button>
 
-<div class="grid" id="cards"></div>
+<button onclick="showCategory('trending')">
+🔥 Trending
+</button>
+
+<button onclick="showCategory('videos')">
+🎬 Video Prompts
+</button>
 
 </div>
 
+<div id="cards" class="cards">
 
-<footer>
+<!-- PART 2 WILL GO HERE -->
 
-AI Prompt Hub • Premium AI Prompts
+</div>
 
-</footer>
-
+</div>
 
 <script>
 
-const boys = [
+function copyPrompt(text){
 
-{
-title:"Luxury Street Portrait",
-tag:"Luxury & Fashion",
-image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic cinematic fashion portrait of an adult male model standing confidently on a modern luxury city street during golden hour. He wears a premium black oversized jacket, clean white T-shirt, dark trousers and luxury sneakers. One hand naturally inside the jacket pocket while the other remains relaxed. Natural upright posture, relaxed shoulders and confident expression. Shot on a professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field, sharp facial focus and creamy background bokeh. Soft golden-hour key light, subtle rim lighting, realistic shadows and natural highlights. Modern luxury buildings in the background with strong foreground-to-background separation. Premium editorial fashion photography, warm cinematic color grading, natural skin texture, realistic fabric details, professional composition, realistic proportions, photorealistic quality, HDR, 4K, highly detailed.`
+navigator.clipboard.writeText(text);
 
-},
+alert("Prompt Copied! ✅");
 
-{
-title:"Black Suit Editorial",
-tag:"Editorial",
-image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f8?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a premium editorial portrait of an adult male model wearing a perfectly tailored black suit with a clean white shirt. He stands beside a modern glass building with one hand adjusting his jacket and the other relaxed. Confident but natural stance, straight posture and subtle serious expression. Professional full-frame camera, 85mm f/1.4 portrait lens, shallow depth of field, precise eye focus and smooth cinematic bokeh. Soft directional side lighting with a subtle rim light around the shoulders. Cool urban background, realistic reflections on glass, cinematic contrast and sophisticated color grading. Luxury magazine photography, realistic skin texture, detailed suit fabric, natural shadows, high dynamic range, photorealistic 4K quality.`
+}
 
-},
+function showCategory(category){
 
-{
-title:"Golden Hour Casual",
-tag:"Cinematic",
-image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic cinematic portrait of an adult male model standing outdoors during a beautiful golden-hour sunset. He wears a beige premium overshirt, plain white T-shirt, dark jeans and clean sneakers. Relaxed standing pose, one hand in pocket and the other naturally hanging. Camera positioned at chest height with a professional full-frame camera and 50mm f/1.4 lens. Strong subject separation, shallow depth of field and creamy sunset bokeh. Warm sunlight falling naturally across the face with soft backlighting and subtle rim light. Urban park background softly blurred. Warm cinematic color grading, natural skin tones, realistic hair and clothing texture, professional photography, photorealistic 4K, highly detailed.`
+document.querySelectorAll(".categories button")
+.forEach(btn=>btn.classList.remove("active"));
 
-},
+event.target.classList.add("active");
 
-{
-title:"Urban Night Portrait",
-tag:"Night Cinematic",
-image:"https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a cinematic night portrait of an adult male model standing on a stylish modern city street surrounded by subtle neon lights. He wears a black leather jacket, dark shirt, black trousers and minimalist sneakers. Confident stance with relaxed shoulders and one hand in the jacket pocket. Shot using a professional full-frame camera with a 50mm f/1.2 lens. Wide aperture, shallow depth of field, sharp eyes and smooth colorful bokeh in the background. Neon practical lights create soft blue and purple highlights while maintaining natural skin tones. Moody cinematic color grading, realistic reflections on the street, detailed clothing texture, professional fashion composition, photorealistic 4K quality.`
+document.querySelectorAll(".card")
+.forEach(card=>{
 
-},
+if(card.dataset.category===category){
 
-{
-title:"Luxury Car Portrait",
-tag:"Luxury Lifestyle",
-image:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic luxury lifestyle portrait of an adult male model standing beside a premium black luxury car. He wears a dark charcoal jacket, black shirt, tailored trousers and premium sneakers. Relaxed confident stance, one hand resting naturally near the car while looking slightly away from the camera. Professional full-frame camera with an 85mm f/1.4 lens, compressed perspective, shallow depth of field and beautiful background separation. Soft sunset key light with subtle edge lighting. Luxury urban location with elegant architecture. Cinematic contrast, rich but natural colors, realistic car reflections, detailed skin and fabric texture, premium automotive editorial photography, photorealistic 4K.`
+card.style.display="block";
 
-},
+}else{
 
-{
-title:"Minimal Studio Portrait",
-tag:"Studio",
-image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a highly realistic professional studio portrait of an adult male model wearing a premium dark blazer over a clean neutral shirt. Standing upright with relaxed shoulders, hands naturally positioned and calm confident expression. Captured with a professional full-frame camera using an 85mm f/1.8 lens. Soft large-box key light positioned at 45 degrees, subtle fill light and gentle rim light separating the subject from the background. Minimal dark studio background with smooth tonal gradient. Clean editorial composition, natural skin texture, realistic facial details, controlled highlights, soft shadows, cinematic neutral color grading, professional head-to-waist framing, photorealistic 4K quality.`
+card.style.display="none";
 
-},
+}
 
-{
-title:"Streetwear Fashion",
-tag:"Streetwear",
-image:"https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a high-end streetwear fashion photograph featuring an adult male model standing confidently in a modern urban environment. Outfit includes an oversized neutral hoodie, premium cargo trousers, stylish sneakers and minimal accessories. Dynamic but natural stance with one foot slightly forward and hands relaxed. Captured on a professional full-frame camera using a 35mm f/1.4 lens at eye level. Soft afternoon light, realistic shadows and subtle environmental reflections. Urban walls and architecture in the background with strong leading lines. Cinematic color grading, crisp subject detail, realistic clothing texture, natural skin tones, editorial street-fashion composition, photorealistic 4K.`
+});
 
-},
+}
 
-{
-title:"Classic Denim Look",
-tag:"Casual",
-image:"https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic casual fashion portrait of an adult male model wearing a classic blue denim jacket, white T-shirt, dark trousers and clean sneakers. Natural standing pose beside an urban wall, one hand in pocket and body slightly angled toward the camera. Professional full-frame camera with a 50mm f/1.4 lens, shallow depth of field and realistic perspective. Soft natural daylight from the side with subtle fill light. Background softly blurred with urban textures. Balanced composition, natural skin tones, realistic denim texture, cinematic neutral color grading, subtle contrast, detailed hair and facial features, professional lifestyle photography, photorealistic 4K.`
+</script>
 
-},
+</body>
+</html><!-- BOYS PROMPTS -->
 
-{
-title:"Desert Fashion",
-tag:"Desert Cinematic",
-image:"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a cinematic desert fashion portrait of an adult male model standing on golden sand dunes during sunset. He wears a premium beige linen shirt, dark trousers, leather boots and minimalist accessories. Strong yet natural standing posture, body slightly turned toward the camera. Captured with a professional full-frame camera and 85mm f/1.4 lens. Warm low-angle sunlight creates beautiful highlights and long realistic shadows. Soft atmospheric haze in the distant dunes, shallow depth of field and subtle foreground texture. Warm desert color grading, natural skin tones, detailed fabric, realistic sand texture, cinematic composition, photorealistic 4K HDR.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy1/800/600">
+<div class="card-content">
+<h3>Pakistani White Shalwar Kameez</h3>
+<p>Create a realistic portrait of a young man wearing an elegant white Pakistani shalwar kameez, traditional background, golden hour lighting, 85mm lens, cinematic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy2/800/600">
+<div class="card-content">
+<h3>Black Kurta</h3>
+<p>Young man wearing a stylish black kurta, dramatic cinematic lighting, dark background, sharp details, realistic skin texture, professional fashion photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Rainy City Portrait",
-tag:"Rain Photography",
-image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic cinematic portrait of an adult male model standing on a rainy city street at night. He wears a dark waterproof jacket, black trousers and stylish boots. Relaxed confident stance with hands naturally positioned. Wet pavement reflects surrounding city lights. Shot with a professional full-frame camera using a 50mm f/1.2 lens, wide aperture and shallow depth of field. Soft street lighting mixed with subtle neon highlights, realistic rain atmosphere and gentle rim light. Moody cinematic color grading, cool shadows with warm highlights, detailed wet fabric, realistic skin texture, professional urban composition, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy3/800/600">
+<div class="card-content">
+<h3>White Kurta Heritage</h3>
+<p>Young Pakistani man in a clean white kurta standing beside beautiful historic architecture, warm sunset light, shallow depth of field, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy4/800/600">
+<div class="card-content">
+<h3>Denim Street Style</h3>
+<p>Young man wearing a denim jacket and black jeans walking through a modern city street, cinematic composition, 35mm lens, natural realistic lighting.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Coffee Shop Lifestyle",
-tag:"Lifestyle",
-image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a realistic premium lifestyle portrait of an adult male model standing inside a sophisticated modern coffee shop. He wears a smart casual beige jacket, white shirt, dark trousers and a minimalist watch. Natural relaxed stance beside a wooden table, holding a coffee cup casually. Shot with a professional full-frame camera using a 50mm f/1.4 lens. Warm window light illuminates the face while the background falls into soft creamy bokeh. Cozy interior, realistic reflections, cinematic depth and natural shadows. Warm editorial color grading, realistic skin and fabric texture, professional lifestyle photography, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy5/800/600">
+<div class="card-content">
+<h3>Black Waistcoat</h3>
+<p>Elegant young man wearing a black waistcoat over traditional Pakistani clothing, luxury wedding venue, soft golden lighting, premium portrait photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy6/800/600">
+<div class="card-content">
+<h3>Eid Traditional Look</h3>
+<p>Young man wearing an elegant traditional Eid outfit, beautiful festive lights in background, warm bokeh, cinematic portrait, realistic details.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Luxury Hotel Portrait",
-tag:"Premium",
-image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a premium cinematic portrait of an adult male model standing inside an elegant five-star hotel lobby. He wears a sophisticated charcoal suit, black shirt and polished shoes. Confident upright stance, one hand adjusting the cuff and the other relaxed. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and strong subject separation. Warm chandelier lighting combined with soft directional key light. Elegant marble architecture and golden details in the background. Luxury editorial composition, refined cinematic color grading, natural skin texture, realistic clothing details, subtle highlights, photorealistic 4K HDR.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy7/800/600">
+<div class="card-content">
+<h3>Desert Fashion</h3>
+<p>Young man in traditional South Asian clothing standing in a desert at sunset, flowing fabric, cinematic wide shot, realistic professional photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy8/800/600">
+<div class="card-content">
+<h3>Rainy City</h3>
+<p>Cinematic portrait of a young man walking through a rainy city street, wet road reflections, dramatic atmosphere, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Black & White Portrait",
-tag:"Classic",
-image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a timeless black-and-white editorial portrait of an adult male model standing against a sophisticated architectural background. He wears a tailored dark suit and simple shirt. Natural upright stance, shoulders relaxed and face slightly turned toward the camera. Shot with a professional full-frame camera and an 85mm f/1.4 lens. Soft directional studio-style lighting creates controlled highlights and gentle shadows. Strong facial detail, realistic skin texture and beautiful tonal range. High-contrast monochrome color treatment, cinematic composition, subtle film grain, professional magazine photography, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy9/800/600">
+<div class="card-content">
+<h3>Mountain Portrait</h3>
+<p>Young man standing near beautiful green mountains, traditional outfit, cloudy sky, natural light, realistic travel photography, sharp details.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy10/800/600">
+<div class="card-content">
+<h3>Royal Blue Kurta</h3>
+<p>Young man wearing a royal blue kurta, elegant traditional setting, cinematic lighting, shallow depth of field, premium fashion portrait.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Modern Rooftop",
-tag:"City Lifestyle",
-image:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic cinematic rooftop portrait of an adult male model overlooking a modern city skyline at sunset. He wears a premium dark bomber jacket, plain shirt, tailored trousers and clean sneakers. Relaxed confident stance with one hand in pocket, body slightly angled toward the skyline. Captured using a professional full-frame camera with a 35mm f/1.4 lens. Golden backlight creates a subtle rim around the subject while the city remains softly detailed in the background. Cinematic depth, realistic atmosphere, warm sunset color grading, natural skin tones, detailed clothing texture, professional fashion composition, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy11/800/600">
+<div class="card-content">
+<h3>Cafe Lifestyle</h3>
+<p>Young man sitting in a modern cafe, smart casual outfit, soft window light, natural expression, realistic lifestyle photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy12/800/600">
+<div class="card-content">
+<h3>Black Sherwani</h3>
+<p>Young man wearing an elegant black sherwani at a wedding venue, warm lights, cinematic portrait, premium fashion photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Premium Casual Look",
-tag:"Fashion",
-image:"https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a premium realistic fashion portrait of an adult male model wearing a clean neutral-toned oversized shirt, fitted trousers and modern sneakers. He stands naturally against a minimalist concrete building with a relaxed confident expression. One hand in pocket and the other relaxed by his side. Shot with a professional full-frame camera using an 85mm f/1.4 lens, shallow depth of field and smooth background bokeh. Soft diffused daylight, subtle edge lighting and natural shadows. Minimal cinematic color grading, realistic skin texture, highly detailed clothing, clean composition, premium editorial photography, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy13/800/600">
+<div class="card-content">
+<h3>Traditional Village</h3>
+<p>Young man in traditional Pakistani clothing in a peaceful village setting, golden hour, natural environment, documentary-style photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy14/800/600">
+<div class="card-content">
+<h3>Motorbike Street</h3>
+<p>Young man standing beside a classic motorcycle on an urban street, stylish outfit, sunset lighting, cinematic street photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Evening Boulevard",
-tag:"Cinematic",
-image:"https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a cinematic evening portrait of an adult male model walking slowly along a sophisticated city boulevard. He wears a black tailored coat, dark trousers and premium shoes. Natural walking stance, confident posture and subtle movement in the coat. Captured using a professional full-frame camera with a 50mm f/1.2 lens and cinematic shallow depth of field. Street lamps create warm highlights while the background contains soft circular bokeh. Balanced composition with leading lines from the boulevard. Moody cinematic color grading, realistic motion detail, natural skin texture, detailed clothing, photorealistic 4K.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy15/800/600">
+<div class="card-content">
+<h3>White Shirt Editorial</h3>
+<p>Young man wearing a crisp white shirt, clean studio background, soft shadows, professional editorial portrait, realistic skin texture.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy16/800/600">
+<div class="card-content">
+<h3>Old City Look</h3>
+<p>Young man wearing a traditional blue kurta in an old city street, warm evening light, cinematic composition, realistic photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Mountain Adventure",
-tag:"Outdoor",
-image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create an ultra-realistic outdoor portrait of an adult male model standing on a mountain viewpoint surrounded by dramatic natural scenery. He wears a premium outdoor jacket, neutral trousers and hiking boots. Strong natural stance with relaxed shoulders and looking toward the distant landscape. Professional full-frame camera with a 35mm f/1.4 lens to capture both subject and environment. Soft morning sunlight, atmospheric haze and realistic mountain depth. Natural cinematic color grading with rich earth tones, realistic skin and clothing texture, detailed landscape, professional adventure photography, photorealistic 4K HDR.`
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy17/800/600">
+<div class="card-content">
+<h3>Modern Black Suit</h3>
+<p>Young man wearing a modern black suit inside a luxury hotel, soft background blur, professional editorial photography, cinematic lighting.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-},
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy18/800/600">
+<div class="card-content">
+<h3>Autumn Portrait</h3>
+<p>Young man in an elegant traditional outfit surrounded by autumn trees, soft morning light, warm cinematic atmosphere, realistic portrait.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
 
-{
-title:"Luxury Black Outfit",
-tag:"Dark Fashion",
-image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85",
-prompt:`Create a high-end dark fashion portrait of an adult male model wearing an all-black premium outfit consisting of a fitted jacket, black shirt, tailored trousers and luxury sneakers. He stands confidently beside a modern architectural wall with a slightly angled body position. Professional full-frame camera with an 85mm f/1.4 lens, precise eye focus and creamy background separation.
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy19/800/600">
+<div class="card-content">
+<h3>Beach Evening</h3>
+<p>Young man walking beside the sea at sunset, smart casual outfit, warm sky, cinematic travel photography, natural realistic colors.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+</div>
+
+<div class="card" data-category="boys">
+<img src="https://picsum.photos/seed/boy20/800/600">
+<div class="card-content">
+<h3>Minimal Studio</h3>
+<p>Minimal studio portrait of a young man in a neutral traditional outfit, softbox lighting, clean background, realistic professional photography.</p>
+<button class="copy" onclick="copyPrompt(this.previousElementSibling.innerText)">📋 Copy Prompt</button>
+</div>
+                       </div>
