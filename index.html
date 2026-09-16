@@ -228,7 +228,168 @@ AI Prompt Hub • Premium AI Prompts
 <script>
 
 const boys = [
+const boys = [
 
+{
+title:"Pakistani Luxury Kurta Look",
+tag:"Pakistani Fashion",
+image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic cinematic fashion portrait of an adult Pakistani male model wearing a premium black traditional kurta shalwar with elegant minimal embroidery. He is standing confidently outside a luxurious modern building, one hand adjusting his cuff and the other relaxed. Strong masculine stance, straight posture, natural confident expression. Shot on a professional full-frame camera with an 85mm f/1.4 portrait lens, shallow depth of field, razor-sharp facial focus and creamy cinematic bokeh. Warm sunset key light with subtle golden rim lighting, realistic shadows and natural skin tones. Luxury Pakistani fashion editorial style, sophisticated architecture in the background, balanced composition, strong foreground-to-background separation, premium cinematic color grading, realistic fabric texture, detailed hair and skin, photorealistic 4K, high-end magazine photography.`
+
+},
+
+{
+title:"Indian Black Sherwani",
+tag:"Indian Luxury",
+image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a high-end cinematic portrait of an adult Indian male model wearing a luxurious black sherwani with subtle traditional detailing. He stands in an elegant heritage palace environment with a confident relaxed stance, shoulders naturally positioned and hands composed professionally. Use a professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field, precise eye focus and smooth background bokeh. Soft warm architectural lighting combined with a subtle rim light creates depth around the subject. Rich golden and black cinematic color grading, realistic skin texture, detailed sherwani fabric, natural facial details, elegant palace background, professional editorial composition, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Desi Streetwear",
+tag:"Pakistani Street Style",
+image:"https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic cinematic street-fashion portrait of an adult South Asian male model wearing a premium oversized black jacket, white T-shirt, relaxed trousers, luxury sneakers and minimal accessories. He stands on a stylish modern urban street with one foot slightly forward and one hand in his pocket. Natural confident stance and relaxed expression. Shot with a professional full-frame camera using a 50mm f/1.4 lens. Soft afternoon sunlight, subtle rim light and realistic environmental shadows. Modern South Asian city atmosphere, strong leading lines, shallow depth of field and creamy bokeh. Premium streetwear editorial photography, cinematic color grading, realistic skin and fabric texture, photorealistic 4K.`
+
+},
+
+{
+title:"Black Kurta Night Portrait",
+tag:"Night Fashion",
+image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a dramatic cinematic night portrait of an adult South Asian male wearing a perfectly fitted black kurta with premium traditional styling. He stands confidently beside a beautifully illuminated modern building. One hand slightly adjusting the sleeve, other hand relaxed. Professional full-frame camera, 85mm f/1.4 lens, shallow depth of field, sharp eyes and creamy background bokeh. Warm architectural lights mixed with subtle cool ambient light, realistic rim lighting and controlled shadows. Deep cinematic blacks, warm highlights, natural skin tones, detailed traditional fabric, luxury Pakistani-Indian fashion editorial style, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Desert King Style",
+tag:"Desert Cinematic",
+image:"https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a powerful cinematic fashion portrait of an adult South Asian male model standing on golden desert dunes at sunset. He wears a premium cream kurta, tailored trousers, leather shoes and elegant sunglasses. Strong confident stance with relaxed shoulders and one hand naturally positioned near the pocket. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and strong subject separation. Low golden sunlight creates a beautiful rim light around the subject. Warm desert atmosphere, realistic sand texture, cinematic composition, rich golden color grading, natural skin tones, detailed clothing, photorealistic 4K HDR, premium fashion campaign photography.`
+
+},
+
+{
+title:"Royal Pakistani Wedding",
+tag:"Royal Traditional",
+image:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic luxury portrait of an adult Pakistani male model dressed in an elegant ivory sherwani with sophisticated traditional embroidery. He stands inside a luxurious wedding venue decorated with warm golden lights and elegant architecture. Confident upright stance, one hand resting naturally while the other adjusts the sherwani cuff. Professional full-frame camera with an 85mm f/1.4 lens, beautiful compression and creamy bokeh. Soft warm key light, subtle rim lighting and realistic shadows. Premium wedding fashion editorial, rich gold and ivory color grading, highly detailed embroidery, realistic skin texture, cinematic depth, professional composition, photorealistic 4K.`
+
+},
+
+{
+title:"Modern Lahore Street",
+tag:"Urban Pakistan",
+image:"https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a cinematic urban fashion portrait of an adult Pakistani male model standing on a sophisticated city street inspired by modern Lahore architecture. He wears a premium charcoal overshirt, white T-shirt, tailored trousers and luxury sneakers. Relaxed confident stance, one hand in pocket and body slightly angled toward camera. Professional full-frame camera with a 35mm f/1.4 lens, realistic perspective and cinematic depth. Golden-hour sunlight, soft fill light and subtle rim lighting. Background architecture softly blurred but recognizable. Premium editorial color grading, natural skin tones, detailed fabric texture, realistic shadows, photorealistic 4K.`
+
+},
+
+{
+title:"Indian Urban Gentleman",
+tag:"Indian Fashion",
+image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a premium cinematic portrait of an adult Indian male fashion model wearing a sophisticated beige blazer, black shirt, tailored trousers and luxury watch. He stands confidently outside a modern upscale building with a relaxed professional stance. Shot on a full-frame camera with an 85mm f/1.4 lens, shallow depth of field, sharp facial details and creamy bokeh. Soft golden-hour lighting with subtle rim light, natural shadows and realistic skin tones. Modern Indian luxury fashion editorial style, elegant composition, warm cinematic color grading, realistic fabric details, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Black Luxury Outfit",
+tag:"Luxury Fashion",
+image:"https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic high-fashion portrait of an adult South Asian male wearing an all-black luxury outfit consisting of a fitted jacket, premium shirt, tailored trousers, luxury sneakers and minimal accessories. Confident standing pose with one hand in pocket and face slightly turned toward camera. Professional full-frame camera with 85mm f/1.4 lens, shallow depth of field and creamy bokeh. Dramatic softbox lighting from one side with subtle edge lighting. Modern dark architectural background, cinematic contrast, deep blacks and warm highlights. Premium magazine fashion photography, realistic skin texture, detailed clothing, photorealistic 4K.`
+
+},
+
+{
+title:"Monsoon Cinematic Look",
+tag:"Rainy Street",
+image:"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a cinematic rainy-night portrait of an adult South Asian male model standing on a stylish city street during monsoon weather. He wears a dark premium jacket, black trousers and modern boots. Natural confident stance with relaxed shoulders. Wet pavement reflects city lights around him. Professional full-frame camera with a 50mm f/1.2 lens, wide aperture and shallow depth of field. Warm street lamps mixed with subtle cool neon lighting, realistic rain atmosphere and soft rim light. Moody cinematic color grading, natural skin tones, realistic wet clothing texture, professional composition, photorealistic 4K.`
+
+},
+
+{
+title:"Classic White Kurta",
+tag:"Desi Classic",
+image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a premium realistic portrait of an adult Pakistani male wearing a perfectly clean white kurta shalwar with sophisticated traditional styling. He stands in a beautiful outdoor courtyard with elegant stone architecture and greenery. Relaxed upright stance, one hand near the pocket and a natural confident expression. Captured with a professional full-frame camera and 85mm f/1.4 lens. Soft morning light, subtle highlights and gentle shadows. Creamy background bokeh, realistic depth, natural skin texture, detailed white fabric, elegant South Asian editorial photography, warm neutral color grading, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Luxury SUV Fashion",
+tag:"Luxury Lifestyle",
+image:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic luxury lifestyle portrait of an adult South Asian male model standing beside a premium black SUV. He wears a dark kurta with a modern tailored jacket, luxury watch and stylish shoes. Confident relaxed stance with one hand resting naturally near the vehicle. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and strong subject separation. Golden-hour side lighting, subtle rim light and realistic vehicle reflections. Luxury urban location, cinematic composition, premium warm color grading, realistic skin and fabric texture, photorealistic 4K.`
+
+},
+
+{
+title:"Rooftop Desi Fashion",
+tag:"Trending Fashion",
+image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a trending cinematic rooftop portrait of an adult South Asian male model wearing a premium dark kurta with a modern waistcoat. He stands against a dramatic city skyline during sunset. Strong but natural stance, shoulders relaxed and face slightly turned toward the camera. Professional full-frame camera using a 50mm f/1.4 lens, shallow depth of field and cinematic background separation. Golden sunset backlight creates a subtle rim around the subject. Rich warm cinematic grading, natural skin tones, detailed traditional clothing, realistic skyline, professional editorial composition, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Premium Denim Desi",
+tag:"Modern Desi",
+image:"https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a high-end modern South Asian fashion portrait of an adult male model wearing a premium denim jacket over a clean white shirt, dark trousers and stylish sneakers. He stands beside a textured urban wall with one hand in his pocket and a relaxed confident expression. Professional full-frame camera, 50mm f/1.4 lens, shallow depth of field and natural perspective. Soft diffused daylight, subtle rim light and realistic shadows. Contemporary Pakistani-Indian street-fashion aesthetic, cinematic neutral color grading, detailed denim texture, realistic skin, professional composition, photorealistic 4K.`
+
+},
+
+{
+title:"Royal Palace Portrait",
+tag:"Royal Style",
+image:"https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a majestic cinematic portrait of an adult South Asian male model wearing a luxurious deep-colored sherwani with refined traditional embroidery. He stands inside a grand heritage palace with marble architecture and warm chandeliers. Elegant upright stance, hands naturally composed and confident facial expression. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and cinematic compression. Warm directional lighting with subtle rim illumination. Rich royal color grading, realistic skin texture, extremely detailed fabric and embroidery, sophisticated composition, deep environmental perspective, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Night Neon Street",
+tag:"Trending Night",
+image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a trendy cinematic night portrait of an adult South Asian male model wearing a black premium jacket, dark trousers and luxury sneakers. He stands confidently under stylish city neon lights with one hand in his pocket. Professional full-frame camera with a 50mm f/1.2 lens, wide aperture, sharp eyes and creamy bokeh. Neon lighting creates subtle colored highlights while maintaining realistic skin tones. Wet street reflections, atmospheric depth, dramatic cinematic shadows, sophisticated color grading, detailed clothing texture, professional street-fashion composition, photorealistic 4K.`
+
+},
+
+{
+title:"Elegant Eid Fashion",
+tag:"Eid Style",
+image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic premium Eid fashion portrait of an adult Pakistani male wearing an elegant ivory kurta with subtle embroidery, tailored trousers and sophisticated traditional footwear. He stands in a beautifully decorated modern courtyard with warm festive lights. Relaxed confident stance, natural smile and one hand adjusting the sleeve. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and creamy bokeh. Soft warm lighting, subtle rim light and realistic shadows. Luxury Pakistani fashion editorial, elegant festive atmosphere, natural skin texture, detailed fabric, warm cinematic color grading, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Indian Wedding Gentleman",
+tag:"Wedding Fashion",
+image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a sophisticated cinematic wedding portrait of an adult Indian male model wearing a premium ivory sherwani with elegant gold detailing. He stands in a luxurious wedding venue with soft golden decorative lights in the background. Confident upright stance, relaxed shoulders and natural expression. Shot with a professional full-frame camera using an 85mm f/1.4 lens. Beautiful shallow depth of field, sharp face, creamy bokeh, warm key light and subtle rim light. Rich ivory and gold cinematic color grading, detailed embroidery, realistic skin and fabric texture, luxury Indian wedding editorial photography, photorealistic 4K.`
+
+},
+
+{
+title:"Cinematic Black Kurta",
+tag:"Desi Cinematic",
+image:"https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create a powerful cinematic portrait of an adult South Asian male wearing a premium black kurta with modern traditional styling. He stands in a dramatic architectural location with strong leading lines and atmospheric depth. One hand naturally in the pocket, body slightly angled and confident expression. Professional full-frame camera with an 85mm f/1.4 lens, shallow depth of field and precise facial focus. Soft directional light from the side, subtle rim light and controlled cinematic shadows. Deep black tones, warm highlights, natural skin color, realistic fabric texture, premium fashion editorial composition, photorealistic 4K HDR.`
+
+},
+
+{
+title:"Modern Pakistani Gentleman",
+tag:"Premium Pakistani",
+image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90",
+prompt:`Create an ultra-realistic premium portrait of an adult Pakistani male model with a sophisticated modern gentleman aesthetic. He wears a tailored charcoal waistcoat over a crisp white kurta, premium trousers, elegant shoes and a minimalist watch. He stands confidently in front of modern luxury architecture with a natural relaxed stance. Professional full-frame camera, 85mm f/1.4 lens, shallow depth of field, sharp facial focus and creamy bokeh. Soft golden-hour lighting, subtle rim light, realistic shadows and natural skin tones. Premium Pakistani fashion editorial, cinematic composition, refined color grading, detailed clothing and skin texture, photorealistic 4K HDR.`
+}
+
+];
 {
 title:"Luxury Street Portrait",
 tag:"Luxury & Fashion",
